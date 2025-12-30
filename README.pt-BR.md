@@ -3,10 +3,7 @@
 
 # 2️⃣ README.pt-BR.md (Português)
 
-```md
-<p align="right">
-  <a href="./README.md">🇺🇸 English</a>
-</p>
+> 🇺🇸 Read this documentation in English: [README.md](./README.md)
 
 # MoneyIO Lite
 
