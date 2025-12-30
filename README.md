@@ -1,73 +1,106 @@
-# React + TypeScript + Vite
+# MoneyIO Lite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> 🇧🇷 Read this documentation in Portuguese: [README.pt-BR.md](./README.pt-BR.md)
 
-Currently, two official plugins are available:
+**MoneyIO Lite** is a personal finance dashboard developed as an MVP with a strong focus on **architecture quality, UX decisions, and product thinking**, simulating a real-world SaaS from conception to visual polish.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
 
-## React Compiler
+The application allows users to register **income and expenses**, categorize transactions, visualize **financial indicators**, track daily cash flow, and analyze expenses by category — all with local persistence and a clean, professional UI.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Beyond functionality, this project emphasizes:
+- intentional UX decisions
+- visual consistency
+- modern front-end best practices
+- readable and maintainable code
 
-## Expanding the ESLint configuration
+**Current version:** `v1.0.0 (MVP)`
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Full CRUD for transactions (income & expenses)
+- Custom expense categories
+- Local persistence using `localStorage`
+- Financial summary cards (Income, Expenses, Balance)
+- Expense breakdown by category (Top 5 + Others)
+- Daily flow chart (Income vs Expenses)
+- Month filter and text search
+- CSV export
+- Demo reset mode
+- Thoughtful empty states
+- Custom branding (logo and favicon)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## Product & UX Decisions
+
+### “In the blue” financial concept (Brazilian context)
+Positive balance and income use **blue** instead of green, reflecting the Brazilian cultural association of being financially healthy.
+
+### Top 5 + Others strategy
+Prevents visual overload while keeping insights clear, even with many categories.
+
+### Stable dashboard layout
+Fixed-height chart cards avoid grid breaking when data volume changes.
+
+### Improved form experience
+Currency input with real-time masking and validation prevents user errors and improves clarity.
+
+### No heavy UI templates
+The UI was built incrementally to maintain full control over design and architecture.
+
+---
+
+## Tech Stack
+
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS
+- Zustand (state management)
+- React Hook Form + Zod (forms & validation)
+- Recharts (data visualization)
+
+---
+
+## Project Structure
+
+```text
+src/
+ ├─ modules/
+ │   └─ transactions/
+ │       ├─ components/
+ │       ├─ pages/
+ │       ├─ store/
+ │       └─ utils/
+ ├─ shared/
+ ├─ App.tsx
+ └─ index.css
+ ```
+
+This structure supports future evolution such as authentication, backend integration, and multi-user support.
+
+---
+
+## Running the project locally
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Author
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Walther Fornaciari Neto  
+Senior Project Manager / Full-Stack Developer / Tech & Product  
+Focused on digital products, UX, and sustainable engineering.
+
+---
+
+## Disclaimer
+
+This project was built as a portfolio MVP, simulating real product decisions rather than aiming for feature overload.
