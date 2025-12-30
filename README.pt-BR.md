@@ -1,11 +1,6 @@
-
----
-
-# 2️⃣ README.pt-BR.md (Português)
+# MoneyIO Lite
 
 > 🇺🇸 Read this documentation in English: [README.md](./README.md)
-
-# MoneyIO Lite
 
 O **MoneyIO Lite** é um dashboard financeiro pessoal desenvolvido como um MVP, com foco em **qualidade de arquitetura, decisões de UX e pensamento de produto**, simulando um SaaS real desde a concepção até o refinamento visual.
 
